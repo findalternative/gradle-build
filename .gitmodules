@@ -1,0 +1,3 @@
+[submodule "baserepo"]
+	path = baserepo
+	url = git@github.com:conductor-oss/conductor.git
