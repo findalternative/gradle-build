@@ -1,0 +1,19 @@
+name: gradle-build
+
+on:
+  push:
+    branches: ["main"]
+
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: recursive
+      - name: gradle build
+        working-directory: ./baserepo
+        run: |
+          ./gradlew build --scan
