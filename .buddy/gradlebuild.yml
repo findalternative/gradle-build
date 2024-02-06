@@ -1,0 +1,15 @@
+- pipeline: "gradle build"
+  events:
+  - type: "PUSH"
+    refs:
+    - "refs/heads/main"
+  fail_on_prepare_env_warning: true
+  resources: "XLARGE"
+  actions:
+    - action: "Execute gradle build"
+      type: "BUILD"
+      docker_image_name: "library/gradle"
+      docker_image_tag: "8.6-jdk17"
+      execute_commands:
+      - "cd baserepo"
+      - "./gradlew build --scan"
