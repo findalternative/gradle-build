@@ -9,7 +9,7 @@
     - action: "Execute gradle build"
       type: "BUILD"
       docker_image_name: "library/docker"
-      docker_image_tag: "dind-rootless"
+      docker_image_tag: "dind"
       execute_commands:
       - "cd baserepo"
       - "./gradlew build --scan"
