@@ -14,6 +14,7 @@
       - "cd baserepo"
       - "./gradlew build --scan"
       setup_commands:
+      - "apt-get update"
       - "apt-get install -y openjdk-17-jdk"
       - "curl -s \"https://get.sdkman.io\" | bash"
       - "sdk install gradle 8.6"
