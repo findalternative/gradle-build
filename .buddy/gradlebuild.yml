@@ -15,6 +15,6 @@
       - "./gradlew build --scan"
       setup_commands:
       - "apk update"
-      - "apk install -y openjdk17-jdk"
+      - "apk add -y openjdk17-jdk"
       - "curl -s \"https://get.sdkman.io\" | bash"
       - "sdk install gradle 8.6"
