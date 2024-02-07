@@ -17,3 +17,5 @@
       - "apk update"
       - "apk add openjdk17-jdk"
       - "apk add gradle"
+      - "groupadd docker"
+      - "usermod -aG docker $USER"
