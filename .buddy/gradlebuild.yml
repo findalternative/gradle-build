@@ -18,5 +18,6 @@
       - "apk add openjdk17-jdk"
       - "apk add curl"
       - "apk add bash"
+      - "apk add zip"
       - "curl -s \"https://get.sdkman.io\" | bash"
       - "sdk install gradle 8.6"
