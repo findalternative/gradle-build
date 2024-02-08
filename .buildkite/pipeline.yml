@@ -1,0 +1,2 @@
+steps:
+  - command: cd baserepo && ./gradlew build --scan
