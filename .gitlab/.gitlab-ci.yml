@@ -1,8 +1,6 @@
 build:
   variables:
     GIT_SUBMODULE_STATEGY: recursive
-  tags:
-    - shell
   script:
     - cd baserepo
     - ./gradlew build --scan
