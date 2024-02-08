@@ -1,19 +1,14 @@
-stages:
-  - build
-
 build:
-  stage: build
   variables:
     GIT_SUBMODULE_STATEGY: recursive
   script:
-    - apt-get update && apt-get install -y openjdk-17-jdk
     - cd baserepo
-    - ls -la
     - ./gradlew build --scan
   rules:
     - if: $ENABLE_PIPELINES == "true"
-variables:
-  DOCKER_HOST: ""
-  DOCKER_DRIVER: ""
 before_script:
   - git submodule update --init 
+  - apt-get update && apt-get install -y openjdk-17-jdk
+  - curl -fsSL https://get.docker.com -o get-docker.sh
+  - sudo sh get-docker.sh
+
