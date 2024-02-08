@@ -6,12 +6,10 @@
   fail_on_prepare_env_warning: true
   resources: "XLARGE"
   actions:
-    - action: "Execute gradle build"
-      type: "BUILD"
-      docker_image_name: "library/openjdk"
-      docker_image_tag: "17-oracle"
-      execute_commands:
-      - "cd baserepo"
-      - "./gradlew build --scan"
-      setup_commands:
-      - "apt-get install xargs"
+      - action: "./gradlew build --scan"
+        type: "NATIVE_BUILD_LINUX"
+        commands:
+        - "cd baserepo"
+        - "./gradlew build --scan"
+        instance_type: "GENERAL_MEDIUM"
+
