@@ -1,0 +1,21 @@
+version: 2.1
+orbs:
+  node: circleci/gradle@3.0.0
+
+jobs:
+  gradle-build:
+    docker:
+      - image: library/docker:dind
+    steps:
+      - checkout
+      - run: git submodule sync
+      - run: git submodule update --init --recursive
+      - run: 
+          name: "gradle-build"
+          command: |
+            cd baserepo
+            ./gradlew build --scan
+workflows:
+  gradle-build-workflow:
+    jobs:
+      - gradle-build
