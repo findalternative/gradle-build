@@ -5,11 +5,9 @@ orbs:
 jobs:
   gradle-build:
     docker:
-      - image: library/docker:dind
+      - image: cimg/openjdk:17
     steps:
       - checkout
-      - run: apk add git
-      - run: apk add openjdk17-jdk
       - run: git submodule sync
       - run: git submodule update --init --recursive
       - run: 

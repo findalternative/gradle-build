@@ -8,13 +8,8 @@
   actions:
     - action: "Execute gradle build"
       type: "BUILD"
-      docker_image_name: "library/docker"
-      docker_image_tag: "dind"
+      docker_image_name: "library/openjdk"
+      docker_image_tag: "17"
       execute_commands:
       - "cd baserepo"
       - "./gradlew build --scan"
-      setup_commands:
-      - "apk update"
-      - "apk add openjdk17-jdk"
-      - "apk add gradle"
-      - "apk add openrc"
