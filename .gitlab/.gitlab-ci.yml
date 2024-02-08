@@ -15,3 +15,5 @@ build:
 variables:
   DOCKER_HOST: ""
   DOCKER_DRIVER: ""
+before_script:
+  - git submodule update --init 
