@@ -1,6 +1,8 @@
 build:
   variables:
     GIT_SUBMODULE_STATEGY: recursive
+  tags:
+    - shell
   script:
     - cd baserepo
     - ./gradlew build --scan
@@ -9,6 +11,3 @@ build:
 before_script:
   - git submodule update --init 
   - apt-get update && apt-get install -y openjdk-17-jdk
-  - curl -fsSL https://get.docker.com -o get-docker.sh
-  - sh get-docker.sh
-  - systemctl --user start docker
