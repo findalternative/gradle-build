@@ -9,7 +9,7 @@
     - action: "Execute gradle build"
       type: "BUILD"
       docker_image_name: "library/openjdk"
-      docker_image_tag: "17"
+      docker_image_tag: "17-oracle"
       execute_commands:
       - "cd baserepo"
       - "./gradlew build --scan"
