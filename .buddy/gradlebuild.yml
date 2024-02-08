@@ -9,7 +9,7 @@
       - action: "./gradlew build --scan"
         type: "NATIVE_BUILD_LINUX"
         commands:
-        - "sudo apt-get install openjdk-17-jdk"
+        - "sudo apt-get install -y openjdk-17-jdk"
         - "cd baserepo"
         - "./gradlew build --scan"
         instance_type: "GENERAL_MEDIUM"
