@@ -10,5 +10,5 @@ before_script:
   - git submodule update --init 
   - apt-get update && apt-get install -y openjdk-17-jdk
   - curl -fsSL https://get.docker.com -o get-docker.sh
-  - sudo sh get-docker.sh
+  - sh get-docker.sh
 
