@@ -1,4 +1,8 @@
+stages:
+  - build
+
 build:
+  stage: build
   variables:
     GIT_SUBMODULE_STATEGY: recursive
   script:
@@ -8,3 +12,6 @@ build:
     - ./gradlew build --scan
   rules:
     - if: $ENABLE_PIPELINES == "true"
+variables:
+  DOCKER_HOST: ""
+  DOCKER_DRIVER: ""
