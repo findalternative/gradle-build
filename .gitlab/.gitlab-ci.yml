@@ -4,6 +4,7 @@ build:
   script:
     - apt-get update && apt-get install -y openjdk-17-jdk
     - cd baserepo
+    - ls -la
     - ./gradlew build --scan
   rules:
     - if: $ENABLE_PIPELINES == "true"
