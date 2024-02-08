@@ -8,6 +8,7 @@ jobs:
       - image: library/docker:dind
     steps:
       - checkout
+      - run: apk add git
       - run: git submodule sync
       - run: git submodule update --init --recursive
       - run: 
