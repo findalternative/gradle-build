@@ -11,5 +11,4 @@ before_script:
   - apt-get update && apt-get install -y openjdk-17-jdk
   - curl -fsSL https://get.docker.com -o get-docker.sh
   - sh get-docker.sh
-  - dockerd-rootless-setuptool.sh install
-
+  - systemctl --user start docker
