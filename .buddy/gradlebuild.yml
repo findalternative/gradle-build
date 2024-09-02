@@ -4,7 +4,6 @@
     refs:
     - "refs/heads/main"
   fail_on_prepare_env_warning: true
-  resources: "XLARGE"
   actions:
       - action: "./gradlew build --scan"
         type: "NATIVE_BUILD_LINUX"
@@ -12,6 +11,6 @@
         - "sudo apt-get update"
         - "sudo apt-get install -y openjdk-17-jdk"
         - "cd baserepo"
-        - "./gradlew build --scan"
+        - "export ES_JAVA_OPTS=\"-Xms512m -Xmx512m\" ./gradlew build --scan"
         instance_type: "GENERAL_MEDIUM"
 
